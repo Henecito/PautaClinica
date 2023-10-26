@@ -1,14 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     const antibioticHeadings = document.querySelectorAll('.antibiotic-heading');
     const navbarTime = document.querySelector('.navbar-time');
+    let currentOpenAntibioticInfo = null;
 
     antibioticHeadings.forEach(function (heading) {
         heading.addEventListener('click', function () {
             const antibioticInfo = this.nextElementSibling;
+
+            if (currentOpenAntibioticInfo && currentOpenAntibioticInfo !== antibioticInfo) {
+                currentOpenAntibioticInfo.style.display = 'none';
+            }
+
             if (antibioticInfo.style.display === 'block') {
                 antibioticInfo.style.display = 'none';
+                currentOpenAntibioticInfo = null;
             } else {
                 antibioticInfo.style.display = 'block';
+                currentOpenAntibioticInfo = antibioticInfo;
             }
         });
     });
