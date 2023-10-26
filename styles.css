@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color:  #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Diseño de la NavBar */
+header {
+    border-bottom: 1px solid white;
+    background-color: #262626;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+    font-style: italic;
+    padding-left: 1.5rem;
+    cursor: pointer;
+
+}
+.navbar-time {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: white;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+.navbar-time:hover {
+    transform: scale(1.2);
+}
+
+/* Search */
+
+#searchContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    margin-left: 1rem;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    background-color: #262626;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+
+#searchButton:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor primario*/
+.container-primary {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+/* Nombre antibioticos dentro del contenedor */
+.antibiotic-heading {
+    cursor: pointer;
+    color: black;
+    text-align: left;
+}
+
+.antibiotic-heading:hover {
+    color: red;
+}
+
+.antibiotic-info {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 1);
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1a1a1a;
+}
+
+tr:hover {
+    background-color: #444;
+    color: red;
+}
+
+/* Estilos del pie de página */
+.footer {
+    position: relative;
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #262626;
+    border-top: 1px solid white;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.1s ease-in-out;
+}
+
+.link:hover {
+    transform: scale(1.2);
+}
+
+/* Reglas de medios (Media Queries) */
+@media screen and (max-width: 844px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .navbar h2 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .navbar-time {
+        margin-left: 0;
+    }
+    .container-primary {
+        padding: 0.5rem;
+        max-width: 100%;
+    }
+
+    .antibiotic-info {
+        display: none;
+        max-width: 100%;
+    }
+
+    table {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+
+      th, td {
+        padding: 5px;
+        font-size: 12px;
+      }
+      .footer {
+        position: static;
+        display: block;
+        padding: 10px;
+        text-align: center;
+        background-color: #262626;
+        border-top: 1px solid white;
+        cursor: pointer;
+        transition: transform 0.1s ease-in-out;
+    }
+
+}
