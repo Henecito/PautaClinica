@@ -87,13 +87,18 @@ header {
     display: flex;
     padding: 1rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 /* Nombre antibioticos dentro del contenedor */
 .antibiotic-heading {
     cursor: pointer;
     color: black;
-    text-align: left;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .antibiotic-heading:hover {
