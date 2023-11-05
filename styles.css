@@ -186,6 +186,7 @@ table, th, td {
 th, td {
     padding: 10px;
     text-align: left;
+    cursor: pointer;
 }
 
 th {
@@ -196,6 +197,15 @@ tr:hover {
     background-color: #444;
     color: red;
 }
+
+.tooltip {
+    position: fixed;
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 
 /* Estilos del pie de página */
 .footer {

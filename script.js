@@ -36,6 +36,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    const abbreviationElements = document.querySelectorAll('.abbreviation');
+
+   abbreviationElements.forEach((element) => {
+       element.addEventListener('mouseover', () => {
+           const tooltipText = element.getAttribute('data-tooltip');
+           if (tooltipText) {
+               const tooltip = document.createElement('div');
+               tooltip.textContent = tooltipText;
+               tooltip.classList.add('tooltip');
+               document.body.appendChild(tooltip);
+               const rect = element.getBoundingClientRect();
+               tooltip.style.left = rect.left + 'px';
+               tooltip.style.top = rect.bottom + 'px';
+           }
+       });
+
+       element.addEventListener('mouseout', () => {
+           const tooltip = document.querySelector('.tooltip');
+           if (tooltip) {
+               tooltip.remove();
+           }
+       });
+   });
+
     // Función para actualizar la hora actual
     function updateClock() {
         const now = new Date();
