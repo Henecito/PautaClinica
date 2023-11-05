@@ -47,6 +47,7 @@ select {
     width: 20%;
     border-radius: 5px;
     font-style: italic;
+    margin: 1rem;
 }
 
 
@@ -268,9 +269,9 @@ tr:hover {
       select {
       font-size: 1rem;
       padding: 0.5rem;
-      width: 100%;
+      width: 70%;
       border-radius: 5px;
-      margin: 10px;
+      margin: 1rem;
       font-style: italic;
     }
 
