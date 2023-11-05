@@ -4,17 +4,33 @@
     <title>Pauta clínica de utilización de antibióticos</title>
     <link rel="icon" href="assets/img/favicon.ico" type="ico">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <div id="modal" class="modal">
+          <div class="modal-content">
+              <h2>Selecciona una opción</h2>
+              <label for="role">Profesional de salud que consulta:</label>
+              <select id="role">
+                  <option value="medico">Médico</option>
+                  <option value="enfermero">Enfermero</option>
+                  <option value="tecnico">Personal Técnico</option>
+              </select>
+              <button id="submitRole">Aceptar</button>
+          </div>
+      </div>
     <header>
         <nav class="navbar">
             <h2>Pauta clínica de utilización de antibióticos</h2>
             <div class="navbar-time"></div>
         </nav>
     </header>
+    <div class="container-text">
+      <p>La pauta clínica de utilización de antibióticos, posee la utilidad de orientar las prescripciones de cuadros infecciosos a nivel ambulatorio y en contexto de Urgencias en adultos.</p>
+    </div>
     <div id="searchContainer">
-        <input type="text" id="searchInput" placeholder="Buscar remedio por nombre">
+        <input type="text" id="searchInput" placeholder="Buscar medicamento por nombre">
         <button id="searchButton" onclick="searchRemedies()">Buscar</button>
     </div>
       <div class="container-primary">
@@ -30,13 +46,13 @@
                       <tr>
                           <td>500 mg c/8 h x 7 días</td>
                           <td>21</td>
-                          <td>RA, Exacerbación de EPOC e Infección odontológica</td>
+                          <td>RA, Exacerbación de EPOC y odontológica</td>
                           <td>MINSAL, OPS, UptoDate</td>
                       </tr>
                       <tr>
                           <td>500 mg c/8 h x 5 días</td>
                           <td>15</td>
-                          <td>RA e Infección odontológica</td>
+                          <td>RA y odontológica</td>
                           <td>MINSAL, OPS, UptoDate</td>
                       </tr>
                       <tr>
@@ -48,7 +64,7 @@
                       <tr>
                           <td>500 mg c/8 h x 4 días</td>
                           <td>12</td>
-                          <td>Bacteriuria asintomática (embarazadas)</td>
+                          <td>Bacteria asintomática (embarazadas)</td>
                           <td>MINSAL, OPS, UptoDate</td>
                       </tr>
                       <tr>
@@ -66,7 +82,7 @@
                       <tr>
                           <td>1 g c/12 h x 5 - 1 g c/24 h x 10 días</td>
                           <td>20</td>
-                          <td>FA e Infección odontológica</td>
+                          <td>FA y odontológica</td>
                           <td>MINSAL, OPS, UptoDate</td>
                       </tr>
                   </table>
@@ -96,13 +112,13 @@
                       <tr>
                           <td>500/125 mg c/12 h x 5 días</td>
                           <td>10</td>
-                          <td>Infección odontológica odontogénica</td>
+                          <td>Infección odontogénica</td>
                           <td>MINSAL, OPS, UptoDate</td>
                       </tr>
                       <tr>
                           <td>500/125 mg c/12 h x 7 días</td>
                           <td>14</td>
-                          <td>Infección odontológica odontogénica</td>
+                          <td>Infección odontogénica</td>
                           <td>MINSAL, OPS, UptoDate</td>
                       </tr>
                   </table>
@@ -138,19 +154,19 @@
                   </table>
               </div>
 
-              <h2 class="antibiotic-heading">Cefadroxilo CP o CM 500 mg</h2>
+              <h2 class="antibiotic-heading">Cefadroxiclo CP o CM 500 mg</h2>
               <div class="antibiotic-info">
                   <table border="1">
                       <tr>
                           <th>Poslogía potencialmente correcta</th>
-                          <th>Nº comprimidos por receta</th>
+                          <th>Nº comprimidos por recete</th>
                           <th>Patologías</th>
                           <th>Fuente</th>
                       </tr>
                       <tr>
                           <td>500 mg c/12 h x 5 días</td>
                           <td>10</td>
-                          <td>Cistitis no complicada, FA estreptocócica grupo A</td>
+                          <td>Cistitis, FA estreptococia grupo A</td>
                           <td>UptoDate</td>
                       </tr>
                       <tr>
@@ -168,7 +184,7 @@
                       <tr>
                           <td>500 mg c/12 h x 7 días</td>
                           <td>14</td>
-                          <td>Cistitis no complicada</td>
+                          <td>Cistitis</td>
                           <td>UptoDate</td>
                       </tr>
                       <tr>
@@ -202,7 +218,7 @@
                           <td>UptoDate</td>
                       </tr>
                       <tr>
-                          <td>500 mg c/24 h x 3 días</td>
+                          <td>50 mg c/24 h x 3 días</td>
                           <td>3</td>
                           <td>Cistitis no complicada hombres</td>
                           <td>UptoDate</td>
@@ -234,7 +250,7 @@
                       <tr>
                           <td>250 mg c/12 h x 7 días</td>
                           <td>7</td>
-                          <td>Exacerbación EPOC, celulitis no complicada</td>
+                          <td>Exacerbación EPOC, celulitis</td>
                           <td>MINSAL</td>
                       </tr>
                       <tr>
@@ -270,7 +286,7 @@
                   </table>
               </div>
 
-              <h2 class="antibiotic-heading">Clindamicina CM 300 mg</h2>
+              <h2 class="antibiotic-heading">Clindamdicina CM 300 mg</h2>
               <div class="antibiotic-info">
                   <table border="1">
                       <tr>
@@ -450,13 +466,13 @@
                       <tr>
                           <td>500 mg c/8 h x 7 días</td>
                           <td>21</td>
-                          <td>Infección odontológica</td>
+                          <td>Odontológia</td>
                           <td>UptoDate</td>
                       </tr>
                       <tr>
                           <td>500 mg c/8 h x 14 días</td>
                           <td>42</td>
-                          <td>Infección odontológica</td>
+                          <td>Odontológia</td>
                           <td>UptoDate</td>
                       </tr>
                       <tr>
@@ -474,7 +490,7 @@
                       <tr>
                           <td>500 mg c/12 h x 4 días</td>
                           <td>12</td>
-                          <td>Infección intraabdominal</td>
+                          <td>Infección intrabdominal</td>
                           <td>UptoDate</td>
                       </tr>
                   </table>
@@ -492,7 +508,7 @@
                       <tr>
                           <td>100 mg c/12 h x 7 días (hombres)</td>
                           <td>14</td>
-                          <td>Cistitis no complicada hombres, bacteriuria asintomatica solo embarazadas</td>
+                          <td>Cistitis hombres, bacteriuria asintomatica solo embarazadas</td>
                           <td>OPS, UptoDate</td>
                       </tr>
                       <tr>
@@ -504,7 +520,7 @@
                       <tr>
                           <td>100 mg c/12 h x 5 días (mujeres)</td>
                           <td>10</td>
-                          <td>Cistitis no complicada mujer</td>
+                          <td>Cistitis mujer</td>
                           <td>UptoDate</td>
                       </tr>
                   </table>

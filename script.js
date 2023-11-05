@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('modal');
+    const submitButton = document.getElementById('submitRole');
+
+    modal.style.display = 'block';
+
+    submitButton.addEventListener('click', function () {
+        const role = document.getElementById('role').value;
+        if (role === 'medico' || role === 'enfermero' || role === 'tecnico') {
+            modal.style.display = 'none';
+            document.querySelector('.content').style.display = 'block';
+        } else {
+            alert('Por favor, selecciona una opción válida.');
+        }
+    });
+
     const antibioticHeadings = document.querySelectorAll('.antibiotic-heading');
     const navbarTime = document.querySelector('.navbar-time');
     let currentOpenAntibioticInfo = null;
