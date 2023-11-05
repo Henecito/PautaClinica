@@ -38,27 +38,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const abbreviationElements = document.querySelectorAll('.abbreviation');
 
-   abbreviationElements.forEach((element) => {
-       element.addEventListener('mouseover', () => {
-           const tooltipText = element.getAttribute('data-tooltip');
-           if (tooltipText) {
-               const tooltip = document.createElement('div');
-               tooltip.textContent = tooltipText;
-               tooltip.classList.add('tooltip');
-               document.body.appendChild(tooltip);
-               const rect = element.getBoundingClientRect();
-               tooltip.style.left = rect.left + 'px';
-               tooltip.style.top = rect.bottom + 'px';
-           }
-       });
+    abbreviationElements.forEach((element) => {
+        let tooltip = null;
 
-       element.addEventListener('mouseout', () => {
-           const tooltip = document.querySelector('.tooltip');
-           if (tooltip) {
-               tooltip.remove();
-           }
-       });
-   });
+        element.addEventListener('click', () => {
+            const tooltipText = element.getAttribute('data-tooltip');
+
+            // Si ya hay un tooltip abierto y se hace clic en el mismo elemento, ciérralo
+            if (tooltip && tooltip.parentElement === document.body) {
+                tooltip.remove();
+                tooltip = null;
+            } else if (tooltipText) {
+                tooltip = document.createElement('div');
+                tooltip.textContent = tooltipText;
+                tooltip.classList.add('tooltip');
+                document.body.appendChild(tooltip);
+                const rect = element.getBoundingClientRect();
+                tooltip.style.left = rect.left + 'px';
+                tooltip.style.top = rect.bottom + 'px';
+
+                // Agrega un evento de clic en el documento para cerrar el tooltip al hacer clic en cualquier lugar
+                document.addEventListener('click', (event) => {
+                    if (!tooltip.contains(event.target) && event.target !== element) {
+                        tooltip.remove();
+                        tooltip = null;
+                    }
+                });
+            }
+        });
+    });
+
+
 
     // Función para actualizar la hora actual
     function updateClock() {
