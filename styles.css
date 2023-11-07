@@ -262,6 +262,7 @@ tr:hover {
     table {
         max-width: 100%;
         overflow-x: auto;
+        min-width: 100%;
       }
 
       th, td {
