@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     submitButton.addEventListener('click', function () {
         const role = document.getElementById('role').value;
-        if (role === 'medico' || role === 'enfermero' || role === 'tecnico') {
+        if (role === 'medico' || role === 'enfermero' || role === 'tecnico' || role === 'quimico') {
             modal.style.display = 'none';
             document.querySelector('.content').style.display = 'block';
         } else {
